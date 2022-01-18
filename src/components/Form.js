@@ -1,24 +1,34 @@
 import { useState } from "react";
 const Form=()=>{
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [userInput, setUserinput] = useState({
+        name:'',
+        email:'',
+        password:''
+    })
 
     const nameChangeHandler = (event)=>{
-        setName(event.target.value)
+       setUserinput({
+           ...userInput,
+           name:event.target.value
+       })
 
     }
     const emailChangeHandler = (event)=>{
-        setEmail(event.target.value)
+       setUserinput({
+           ...userInput,
+           email:event.target.value
+       })
+        
     }
     const passwordChangeHandler = (event)=>{
-        setPassword(event.target.value)
+        setUserinput({
+            ...userInput,
+            password:event.target.value
+        })
     }
     const SubmitHandler = (event)=>{
         event.preventDefault()
-         console.log(name);
-         console.log(email);
-         console.log(password);
+       console.log(userInput);
 
     }
     return(
