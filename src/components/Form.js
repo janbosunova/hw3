@@ -7,23 +7,29 @@ const Form=()=>{
     })
 
     const nameChangeHandler = (event)=>{
-       setUserinput({
-           ...userInput,
-           name:event.target.value
-       })
+      setUserinput((prevState)=>{
+          return{
+              ...prevState,
+              name:event.target.value
+          }
+      })
 
     }
     const emailChangeHandler = (event)=>{
-       setUserinput({
-           ...userInput,
-           email:event.target.value
+       setUserinput((prevState)=>{
+           return{
+               ...prevState,
+               email:event.target.value
+           }
        })
         
     }
     const passwordChangeHandler = (event)=>{
-        setUserinput({
-            ...userInput,
-            password:event.target.value
+        setUserinput((prevState)=>{
+            return{
+                ...prevState,
+                password:event.target.value
+            }
         })
     }
     const SubmitHandler = (event)=>{
